@@ -1,0 +1,33 @@
+// .vscode/tasks.json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Python with Error Logging",
+            "type": "shell",
+            // This command now writes the log file to your main project folder
+            "command": "python \"${file}\" > \"${workspaceFolder}/terminal_output.log\" 2>&1",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Start Error Dashboard",
+            "type": "shell",
+            // This command runs the dashboard script from your main project folder
+            "command": "python \"${workspaceFolder}/dashboard.py\"",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
